@@ -29,9 +29,45 @@ export const Pokemons = () => {
                 <button className="btn-search" onClick={handleGetPokemon}>BUSCAR</button>
             </div>
 
-            <div className="pokemons-results">
-                <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon?.id}.png`} alt="" />
+            <div className="pokemon-card">
+                <div className="pokemon-card-title">
+                    <h2>{pokemon?.name}</h2>
+                    <small>{pokemon?.id}</small>
+                </div>
+
+                <div className="pokemon-card-body">
+                    <img src={pokemon?.sprites['front_default']} />
+
+                    <div className="pokemon-card-body-data">
+                        <div className="pokemon-card-body-data-info">
+                            <strong>WEIGHT: {pokemon?.weight}</strong>
+                        </div>
+
+                        <div className="pokemon-card-body-data-info">
+                            <strong>TYPE: {
+                                pokemon?.types.map((_item: any, index: any) => (
+                                    pokemon?.types[index].type['name']
+                                ))}
+                            </strong>
+                        </div>
+
+                        <div className="pokemon-card-body-data-info">
+                            <strong>ABILITIES: {
+                                pokemon?.abilities.map((_item: any, index: any) => (
+                                    pokemon.abilities[index].ability['name']
+                                ))}
+                            </strong>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );
 }
+
+
+
+{/* <div className="pokemon-card-footer">
+    
+    <div className="abilities">abilities: </div>
+</div> */}

@@ -1,17 +1,14 @@
 import { Container } from "../Container";
+import { Pokemons } from "../Pokemons";
 import './styles.css';
 
 export const Main = () => {
 
     return (
         <main>
-            <Container justifyContent='space-between'>
-                <div className="left-side">
-                    LEFT-SIDE
-                </div>
-
-                <div className="right-side">
-                    RIGHT-SIDE
+            <Container>
+                <div className="main-content">
+                    <Pokemons />
                 </div>
             </Container>
         </main>

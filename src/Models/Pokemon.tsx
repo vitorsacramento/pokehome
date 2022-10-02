@@ -1,7 +1,8 @@
 export type Pokemon = {
     id: number;
     name: string;
-    abilities: [];
-    sprites: [];
-    type: [];
+    abilities: any;
+    sprites: any;
+    types: any;
+    weight: number;
 }

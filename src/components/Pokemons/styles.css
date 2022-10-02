@@ -1,16 +1,17 @@
 .pokemons {
     display: flex;
-    flex-direction: column;
     width: 100%;
 }
 
 .pokemons-search {
     display: flex;
-    margin-bottom: 20px;
+    flex: 1;
+    margin: 0 10px 0 0;
 }
 
 .pokemons-search input[type="text"] {
     width: 100%;
+    height: 50px;
     margin: 0 20px 0 0;
     padding: 10px 0;
     border: none;
@@ -26,8 +27,8 @@ input[type="text"]:focus {
 
 label {
     position: absolute;
-    top: 170px;
-    left: 102px;
+    margin-top: 20px;
+    margin-left: 0;
     opacity: .5;
     font-size: 1rem;
     transition: .2s all;
@@ -40,7 +41,7 @@ input:not(:placeholder-shown) {
 
 input:focus + label,
 input:not(:placeholder-shown) + label {
-    margin-top: -25px;
+    margin-top: -2px;
     font-size: .8rem;
     transition: .2s all;
     color: #2a75bb;
@@ -49,14 +50,62 @@ input:not(:placeholder-shown) + label {
 }
 
 .btn-search {
-    padding: 15px 30px;
+    height: 50px;
+    padding: 15px 50px;
     border: none;
     background-color: #2a75bb;
     color: #fff;
     cursor: pointer;
 }
 
-.pokemons-results {
+.pokemon-card {
     display: flex;
-    flex: 2;
+    flex-direction: column;
+    flex: 1;
+    background-color: #2a75bb;
+    border-radius: 10px;
+}
+
+.pokemon-card-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 2px solid #fff;
+    color: #fff;
+}
+
+.pokemon-card-title > h2 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.pokemon-card-title > small {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 5px 0 0 0;
+    color: #ffcb05;
+}
+
+.pokemon-card-body {
+    display: flex;
+    justify-content: center;
+}
+
+.pokemon-card-body > img {
+    display: flex;
+    flex: 1;
+}
+
+.pokemon-card-body-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+.pokemon-card-body-data-info {
+    padding: 10px 0;
 }
