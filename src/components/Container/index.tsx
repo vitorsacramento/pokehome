@@ -9,5 +9,4 @@ export const Container = styled.div<ContainerProps>`
     justify-content: ${props => props.justifyContent};
     width: 100%;
     max-width: 1200px;
-    /* background-color: rgba(255, 255, 255, .3); */
 `;

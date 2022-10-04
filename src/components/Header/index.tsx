@@ -1,6 +1,5 @@
 import { Container } from "../Container";
 import logo from '../../assets/img/logo.png';
-import { PokeIcon } from "./PokeIcon";
 import './styles.css';
 
 
@@ -8,13 +7,9 @@ export const Header = () => {
 
     return (
         <header>
-            <Container justifyContent="space-between">
+            <Container justifyContent="center">
                 <div className="logo">
                     <img src={logo} alt="Logo Pokehome" />
-                </div>
-
-                <div className="pokeball">
-                    <PokeIcon />
                 </div>
             </Container>
 
