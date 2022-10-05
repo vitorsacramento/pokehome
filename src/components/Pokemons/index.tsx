@@ -9,6 +9,7 @@ import './styles.css';
 export const Pokemons = () => {
     const [pokemon, setPokemon] = useState<Pokemon>();
     const [input, setInput] = useState('');
+    
 
     const load = async () => {
         let response = await api.loadPokemon(input);

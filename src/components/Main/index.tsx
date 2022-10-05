@@ -6,7 +6,7 @@ export const Main = () => {
 
     return (
         <main>
-            <Container>
+            <Container justifyContent="center">
                 <div className="main-content">
                     <Pokemons />
                 </div>

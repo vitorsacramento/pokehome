@@ -1,5 +1,7 @@
 import { Pokemon } from '../../../Models/Pokemon';
 import logo from '../../../assets/img/logo.png';
+import { useState } from 'react';
+import spinner from '../../assets/img/pokebola.png';
 import './styles.css';
 
 type PokemonCardProps = {
@@ -7,6 +9,8 @@ type PokemonCardProps = {
 }
 
 export const PokemonCard = ({ pokemon }: PokemonCardProps) => {
+
+    const [loading, setLoading] = useState(false);
 
     return (
         <div className="card">

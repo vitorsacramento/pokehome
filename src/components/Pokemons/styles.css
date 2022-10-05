@@ -1,7 +1,6 @@
 .pokemons {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
+    display: flex;
+    justify-content: center;
     width: 100%;
     padding: 10px;
 }
@@ -9,17 +8,19 @@
 .pokemons-search {
     display: flex;
     flex-direction: column;
-    background-color: white;
+    flex: 1;
+    margin-right: 10px;
 }
 
 .pokemons-search input[type="text"] {
     height: 50px;
-    margin: 0 0 20px 0;
-    padding: 10px 0;
+    margin: 0 0 10px 0;
+    padding: 10px 0 0 0;
     border: none;
     border-bottom: thin solid rgba(0, 0, 0, .5);
     font-size: 1.2rem;
     background-color: transparent;
+    text-transform: lowercase;
     color: #2a75bb;
 }
 
@@ -54,9 +55,11 @@ input:not(:placeholder-shown)+label {
 .btn-search {
     height: 50px;
     padding: 15px 50px;
-    border: none;
+    border: thin solid rgba(0, 0, 0, .5);
+    border-radius: 8px;
     background-color: #2a75bb;
-    color: #fff;
+    color: #ffcb05;
+    font-weight: bolder;
     cursor: pointer;
 }
 
@@ -66,7 +69,19 @@ input:not(:placeholder-shown)+label {
 }
 
 .pokemons-result {
-    display: grid;
+    display: flex;
     justify-content: center;
+    flex: 1;
     perspective: 1000px;
+    background-color: transparent;
+}
+
+@media only screen and (max-width: 600px) {
+    .pokemons {
+        flex-direction: column;
+    }
+
+    .pokemons-search {
+        margin-bottom: 20px;
+    }
 }
