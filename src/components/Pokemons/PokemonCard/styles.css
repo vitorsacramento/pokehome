@@ -1,0 +1,104 @@
+.card {
+    background-color: transparent;
+    width: 250px;
+    height: 400px;
+    perspective: 1000px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../../assets/img/pokeballcard.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border: thin solid rgba(0, 0, 0, .3);
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px 1px #000;
+    width: 200px;
+    background-color: #2a75bb;
+}
+
+.card-back {
+    display: grid;
+    padding: 10px;
+    border-radius: 8px;
+    transform: rotateY(180deg);
+    box-shadow: 0px 0px 5px 1px #000;
+    background-color: #2a75bb;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.card-back-inner {
+    border-radius: 3px;
+    padding: 5px;
+    background-color: #fff;
+}
+
+.pokemon-name > h2 {
+    margin-bottom: 10px;
+    padding: 10px 0;
+    border-bottom: thin solid #2a75bb;
+    text-transform: uppercase;
+    color: #2a75bb;
+}
+
+.pokemon-name > small {
+    font-size: 1.2rem;
+    font-weight: bolder;
+    color: #ffcb05;
+}
+
+.pokemon-pic > img {
+    width: 200px;
+}
+
+.pokemon-data {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+    top: -10px;
+}
+
+.pokemon-data-type,
+.pokemon-data-weight {
+    margin-bottom: 10px;
+}
+
+.pokemon-data-type > ul > li,
+.pokemon-data-weight > ul > li {
+    list-style: none;
+    text-transform: capitalize;
+}
+
+.pokemon-data-type > span,
+.pokemon-data-weight > span {
+    font-size: 1rem;
+    font-weight: bold;
+}

@@ -12,10 +12,6 @@ export const Header = () => {
                     <img src={logo} alt="Logo Pokehome" />
                 </div>
             </Container>
-
-            <div className="pokeball-header">
-                <div className="ball"></div>
-            </div>
         </header>
     );
 }
