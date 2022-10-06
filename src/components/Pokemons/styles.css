@@ -1,6 +1,7 @@
 .pokemons {
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 100%;
     padding: 10px;
 }
@@ -9,7 +10,7 @@
     display: flex;
     flex-direction: column;
     flex: 1;
-    margin-right: 10px;
+    height: 400px;
 }
 
 .pokemons-search input[type="text"] {
@@ -83,5 +84,26 @@ input:not(:placeholder-shown)+label {
 
     .pokemons-search {
         margin-bottom: 20px;
+        max-height: 100px;
     }
+
+    .btn-search {
+        font-size: .750rem;
+    }
+
+    .pokemons-result {
+        max-height: 400px;
+        background-color: red;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .pokemons-search {
+        margin-right: 20px;
+        max-width: 300px;
+    }
+
+    .pokemons-result {
+        max-width: 280px;
+    }        
 }
