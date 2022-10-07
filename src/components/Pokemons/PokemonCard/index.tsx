@@ -26,13 +26,13 @@ export const PokemonCard = ({ pokemon, loading, input }: PokemonCardProps) => {
                                 <img src={spinner} />
                             </div>}
 
-                        {pokemon?.name != input &&
+                        {/* {pokemon?.name != input &&
                             <div className="not-found">
                                 <h2>Nenhum Pokemon encontrado!</h2>
                                 <img src={notFound} />
                                 <p>Tente novamente!</p>
                             </div>
-                        }
+                        } */}
                         <div className="pokemon-name">
                             <h2>{pokemon?.name}</h2>
                             <small>Nº {pokemon?.id < 99 ? `0${pokemon?.id}` : pokemon?.id}</small>
