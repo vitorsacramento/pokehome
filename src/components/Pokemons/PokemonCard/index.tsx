@@ -1,14 +1,16 @@
 import { Pokemon } from '../../../Models/Pokemon';
 import logo from '../../../assets/img/logo.png';
 import spinner from '../../../assets/img/pokebola.png';
+import notFound from '../../../assets/img/sad.png';
 import './styles.css';
 
 type PokemonCardProps = {
     pokemon?: Pokemon | undefined;
     loading: boolean;
+    input: string;
 }
 
-export const PokemonCard = ({ pokemon, loading }: PokemonCardProps) => {
+export const PokemonCard = ({ pokemon, loading, input }: PokemonCardProps) => {
 
     return (
         <div className="card">
@@ -23,6 +25,14 @@ export const PokemonCard = ({ pokemon, loading }: PokemonCardProps) => {
                             <div className="spinning">
                                 <img src={spinner} />
                             </div>}
+
+                        {pokemon?.name != input &&
+                            <div className="not-found">
+                                <h2>Nenhum Pokemon encontrado!</h2>
+                                <img src={notFound} />
+                                <p>Tente novamente!</p>
+                            </div>
+                        }
                         <div className="pokemon-name">
                             <h2>{pokemon?.name}</h2>
                             <small>Nº {pokemon?.id < 99 ? `0${pokemon?.id}` : pokemon?.id}</small>

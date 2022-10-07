@@ -21,7 +21,7 @@ export const Pokemons = () => {
             setPokemon(response);
         } catch (error) {
             setLoading(false);
-            toast.info('Pokemon não encontrado');
+            toast.info('Nenhum Pokemon encontrado!');
         }
     }
 
@@ -40,7 +40,7 @@ export const Pokemons = () => {
     }
 
     const handleGetPokemon = () => {
-        if(input.match(/^[ \t]+$/)) {
+        if (input.match(/^[ \t]+$/)) {
             toast.info('Digite um nome de Pokemon válido');
         } else {
             flipCard();
@@ -68,7 +68,7 @@ export const Pokemons = () => {
             </div>
 
             <div className="pokemons-result">
-                <PokemonCard pokemon={pokemon} loading={loading} />
+                <PokemonCard pokemon={pokemon} loading={loading} input={input} />
             </div>
         </div >
     );
