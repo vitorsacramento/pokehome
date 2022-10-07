@@ -107,7 +107,6 @@ input:not(:placeholder-shown)+label {
 
     .pokemons-result {
         max-height: 400px;
-        background-color: red;
     }
 }
 
