@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import { api } from '../../api';
 import { Pokemon } from '../../Models/Pokemon';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,12 +9,13 @@ import './styles.css';
 export const Pokemons = () => {
     const [pokemon, setPokemon] = useState<Pokemon>();
     const [input, setInput] = useState('');
-    
+    const [loading, setLoading] = useState(false);
 
     const load = async () => {
+        setLoading(true);
         let response = await api.loadPokemon(input);
+        setLoading(false);
         setPokemon(response);
-        console.log(response);
     }
 
     const handleGetPokemonName = (event: ChangeEvent<HTMLInputElement>) => {
@@ -37,19 +38,28 @@ export const Pokemons = () => {
     }
 
     return (
-        <div className="pokemons">
-            <div className="pokemons-search">
-                <input type="text" placeholder=" " id="pokemons" autoComplete='off' onChange={handleGetPokemonName} onFocus={removeFlipCard} />
-                <label htmlFor="pokemons">Buscar Pokemons</label>
-                <button className="btn-search" onClick={handleGetPokemon}>
-                    <span> BUSCAR POKEMON </span>
-                    <FontAwesomeIcon icon={faMagnifyingGlass} />
-                </button>
-            </div>
+        <React.Fragment>
+            <div className="pokemons">
+                <div className="pokemons-search">
+                    <input
+                        type="text"
+                        placeholder=" "
+                        id="pokemons"
+                        autoComplete='off'
+                        onChange={handleGetPokemonName}
+                        onFocus={removeFlipCard}
+                    />
+                    <label htmlFor="pokemons">Buscar Pokemons</label>
+                    <button className="btn-search" onClick={handleGetPokemon} disabled={input == '' ? true : false}>
+                        <span>BUSCAR POKEMON </span>
+                        <FontAwesomeIcon icon={faMagnifyingGlass} />
+                    </button>
+                </div>
 
-            <div className="pokemons-result">
-                <PokemonCard pokemon={pokemon} />
-            </div>
-        </div >
+                <div className="pokemons-result">
+                    <PokemonCard pokemon={pokemon} loading={loading} />
+                </div>
+            </div >
+        </React.Fragment>
     );
 }

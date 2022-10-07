@@ -64,6 +64,17 @@ input:not(:placeholder-shown)+label {
     cursor: pointer;
 }
 
+.btn-search:disabled {
+    border: none;
+    background-color: rgba(0, 0, 0, .2);
+    color: rgba(0, 0, 0, .3);
+    cursor: auto;
+}
+
+.btn-search:disabled:hover {
+    background-color: rgba(0, 0, 0, .2);
+}
+
 .btn-search:hover {
     transition: .2s;
     background-color: rgba(42, 117, 187, .8);
@@ -72,9 +83,12 @@ input:not(:placeholder-shown)+label {
 .pokemons-result {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex: 1;
+    position: relative;
     perspective: 1000px;
     background-color: transparent;
+    z-index: 1;
 }
 
 @media only screen and (max-width: 600px) {
