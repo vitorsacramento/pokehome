@@ -1,5 +1,5 @@
 # Pokehome
-Uma simples Pokedex com busca feita em ReactJS.
+Uma simples busca de Pokemons feita em ReactJS.
 Acesse aqui o projeto: [Pokehome](https://pokehome.netlify.app/)
 
 ## Recurso
