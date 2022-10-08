@@ -26,7 +26,7 @@ export const Pokemons = () => {
     }
 
     const handleGetPokemonName = (event: ChangeEvent<HTMLInputElement>) => {
-        setInput(event.target.value);
+        setInput(event.target.value.toLowerCase());
     }
 
     const flipCard = () => {
