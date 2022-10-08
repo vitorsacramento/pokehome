@@ -35,7 +35,10 @@ export const PokemonCard = ({ pokemon, loading, input }: PokemonCardProps) => {
                         }
                         <div className="pokemon-name">
                             <h2>{pokemon?.name}</h2>
-                            <small>Nº {pokemon?.id < 99 ? `0${pokemon?.id}` : pokemon?.id}</small>
+                            <small>
+                                Nº {pokemon?.id < 10 ? `00${pokemon?.id}` : pokemon?.id &&
+                                    pokemon?.id < 99 ? `0${pokemon?.id}` : pokemon?.id}
+                            </small>
                         </div>
 
                         <div className="pokemon-pic">
