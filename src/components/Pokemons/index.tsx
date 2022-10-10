@@ -17,8 +17,9 @@ export const Pokemons = () => {
         try {
             setLoading(true);
             let response = await api.loadPokemon(input);
-            setLoading(false);
             setPokemon(response);
+            setLoading(false);
+
         } catch (error) {
             setLoading(false);
             toast.info('Nenhum Pokemon encontrado!');
@@ -26,7 +27,7 @@ export const Pokemons = () => {
     }
 
     const handleGetPokemonName = (event: ChangeEvent<HTMLInputElement>) => {
-        setInput(event.target.value.toLowerCase());
+        setInput(event.target.value.toLowerCase().trim());
     }
 
     const flipCard = () => {
